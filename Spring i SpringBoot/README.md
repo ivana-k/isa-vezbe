@@ -1,4 +1,4 @@
-# Vežbe 2 - Spring
+# Vežbe 1 - Spring
 
 ## instaliranje dependency-ja iz pom.xml
 
