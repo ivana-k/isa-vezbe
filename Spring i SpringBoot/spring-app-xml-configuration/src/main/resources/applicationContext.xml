@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="
+http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-4.0.xsd">
+
+	<bean id="assetService" class="rs.ac.uns.ftn.informatika.springapp.service.AssetServiceImpl" scope="prototype"></bean>
+	
+	<!-- setter based dependency injection
+	name atribut mora odgovarati nazivu settera assetService bez reci set u klasi AssetControllerSetterDI -->
+	<bean id="assetControllerSet" class="rs.ac.uns.ftn.informatika.springapp.controller.AssetControllerSetterDI">
+		<!-- ref vrednost odgovara id-u assetService beana -->
+		<property name="assetService" ref="assetService"></property>
+	</bean>
+	
+	<!-- constructor based dependency injection -->
+	<bean id="assetControllerConst" class="rs.ac.uns.ftn.informatika.springapp.controller.AssetControllerConstructorDI">
+		<!-- alternativno je moguce dodati atribut ref="assetService" elementu constructor-arg umesto celog novog beana
+		ako konstruktor ima vise parametara moguce ih je injektovati u redosledu kojim se
+		pojavljuju u konstruktoru navodjenjem atributa index="0", index="1", itd. -->
+		<constructor-arg>
+			<bean class="rs.ac.uns.ftn.informatika.springapp.service.AssetServiceImpl" />
+		</constructor-arg>
+	</bean>
+	
+	<!-- XML alternativa za @ComponentScan -->
+	<!-- <context:component-scan base-package="rs.ac.uns.ftn.informatika.springapp" /> -->
+</beans>
