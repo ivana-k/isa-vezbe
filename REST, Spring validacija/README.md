@@ -1,4 +1,4 @@
-# Vežbe 3 - REST i OpenAPI
+# Vežbe 2 - REST OpenAPI i Spring validacija
 
 ## rest-example
 Primer Spring web aplikacije. Pogledati u **pom.xml** zavisnosti koje moraju da se uključe. Ukoliko je potrebna dodatna konfiguracija projekta (van samih klasa koje predstavljaju konfiguraciju) piše se u **application.properties** fajlu koji se nalazi u src/main/resorces paketu.
