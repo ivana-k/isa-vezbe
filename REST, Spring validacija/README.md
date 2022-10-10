@@ -66,3 +66,24 @@ Rezultat je dostupan u grafičkom obliku na http://localhost:8080/swagger-ui/ind
 ###### Dodatni materijali:
 
 * [OpenAPI](https://spec.openapis.org/oas/v3.1.0)
+
+## validation-demo
+
+Primer Spring aplikacije sa Custom validacijom.
+
+Prilikom obrade zahteva, parametar metode u kontroleru koji predstavlja objekat koji se prosleđuje serveru (a koji je anotiran ograničenjima u modelu) anotiran je sa ___@Valid___.
+
+Greške prilikom validiranja se mogu obraditi u komponenti __ValidationErrorsHandler__ koja je anotirana sa __@RestControllerAdvice__. Metoda ove klase se poziva automatski prilikom neuspešne validacije, a tip HTTP odgovora i status se definišu kroz __ResponseEntity__ i __@ResponseStatus__. Greške se nalaze u BindingResult objektu, koji se vezuje za odgovarajući izuzetak.
+
+Pored predefinisanih anotacija za postavljanje ograničenja mogu se praviti nove anotacije. Primer jedne takve anotacije nalazi se u __validator__ paketu.
+
+###### Dodatni materijali:
+
+* [Bean validation Specification](https://beanvalidation.org/1.0/spec/)
+* [Validation, Data Binding, and Type Conversion Documentation](https://docs.spring.io/spring/docs/4.1.x/spring-framework-reference/html/validation.html)
+
+###### Pokretanje primera (Eclipse)
+
+* importovati projekat u workspace: Import -> Maven -> Existing Maven Project
+* instalirati sve dependency-je iz pom.xml
+* desni klik na projekat -> Run as -> Java Application / Spring Boot app (ako je instaliran STS plugin sa Eclipse marketplace)
