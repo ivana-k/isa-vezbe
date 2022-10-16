@@ -50,7 +50,7 @@
 14. Da li je izgled aplikacije zaista bitan?
     - Svakako, iako je funkcionalnost na prvom mestu. Za više ocene izgled utiče na ocenu. Ne moraju se koristiti napredne biblioteke, i bootstrap aplikacije umeju lepo da izgledaju.
 15. Da li su ocene pojedinačne ili timske?
-    - Iako je projekat timski, ocene su pojedinačne. U specifikaciji projekta je naznačena podela posla za TRI studenta. Ukoliko imate problema sa članovima tima, na vreme se obratite asistentima za dalja uputstva u vezi sa izradom projekta.
+    - Iako je projekat timski, ocene su pojedinačne. U specifikaciji projekta je naznačena podela posla za ČETIRI studenta. Ukoliko imate problema sa članovima tima, na vreme se obratite asistentima za dalja uputstva u vezi sa izradom projekta.
 16. Šta se dešava ako ne nađem tim do roka za prijavu timova?
     - Ipak se potrudite i pokušajte da pronađete kolege s kojima ćete raditi ovaj timski projekat. Ako ipak ne uspete da pronađete tim, upišite se na spisak, pa Vas asistenti nasumično dodeliti timu kojem fale članovi.
 17. Šta se dešava ako tim ne napravi repozitorijum do roka za pravljenje repozitorijuma?
