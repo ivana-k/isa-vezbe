@@ -56,7 +56,7 @@
 17. Šta se dešava ako tim ne napravi repozitorijum do roka za pravljenje repozitorijuma?
     - Direktno će Vam uticati na ocenu taj propust. Ipak se potrudite da napravite repo (nije teško, par klikova). Takođe, nemojte menjati repozitorijume posle postavljanja inicijalnog osim u izuzetnim slučajevima. Tada obavestite asistente o promeni uz novi link. Kada smo već kod repozitorijuma, ako već koristite neki [VCS](https://en.wikipedia.org/wiki/Version_control) alat, nema poente da i dalje distribuirate kod među članovima tima putem emaila, flash memorije, društvenih mreža, itd.
 18. Da li treba da dodamo asistente na repozitorijum projekta?
-    - Naravno, zbog uvida u rad na projektu potrebno je dodati asistente. Za korisničke naloge asistenata koje trebate da dodate pitajte na vežbama.
+    - Naravno, zbog uvida u rad na projektu potrebno je dodati nalog **isa-asistent**.
 19. Da li moramo da koristimo DTO/BO/VO projekcije za razmenu informacija između komponenti sistema?
     - Ne morate, ali bi bilo poželjno da to učinite na mestima gde ima smisla da se radi sa projekcijama a ne originalima.
 20. Da li smemo da koristimo Lombok?
