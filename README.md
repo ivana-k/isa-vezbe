@@ -50,13 +50,13 @@
 14. Da li je izgled aplikacije zaista bitan?
     - Svakako, iako je funkcionalnost na prvom mestu. Za više ocene izgled utiče na ocenu. Ne moraju se koristiti napredne biblioteke, i bootstrap aplikacije umeju lepo da izgledaju.
 15. Da li su ocene pojedinačne ili timske?
-    - Iako je projekat timski, ocene su pojedinačne. U specifikaciji projekta je naznačena podela posla za TRI studenta. Ukoliko imate problema sa članovima tima, na vreme se obratite asistentima za dalja uputstva u vezi sa izradom projekta.
+    - Iako je projekat timski, ocene su pojedinačne. U specifikaciji projekta je naznačena podela posla za ČETIRI studenta. Ukoliko imate problema sa članovima tima, na vreme se obratite asistentima za dalja uputstva u vezi sa izradom projekta.
 16. Šta se dešava ako ne nađem tim do roka za prijavu timova?
     - Ipak se potrudite i pokušajte da pronađete kolege s kojima ćete raditi ovaj timski projekat. Ako ipak ne uspete da pronađete tim, upišite se na spisak, pa Vas asistenti nasumično dodeliti timu kojem fale članovi.
 17. Šta se dešava ako tim ne napravi repozitorijum do roka za pravljenje repozitorijuma?
     - Direktno će Vam uticati na ocenu taj propust. Ipak se potrudite da napravite repo (nije teško, par klikova). Takođe, nemojte menjati repozitorijume posle postavljanja inicijalnog osim u izuzetnim slučajevima. Tada obavestite asistente o promeni uz novi link. Kada smo već kod repozitorijuma, ako već koristite neki [VCS](https://en.wikipedia.org/wiki/Version_control) alat, nema poente da i dalje distribuirate kod među članovima tima putem emaila, flash memorije, društvenih mreža, itd.
 18. Da li treba da dodamo asistente na repozitorijum projekta?
-    - Naravno, zbog uvida u rad na projektu potrebno je dodati asistente. Za korisničke naloge asistenata koje trebate da dodate pitajte na vežbama.
+    - Naravno, zbog uvida u rad na projektu potrebno je dodati nalog **isa-asistent**.
 19. Da li moramo da koristimo DTO/BO/VO projekcije za razmenu informacija između komponenti sistema?
     - Ne morate, ali bi bilo poželjno da to učinite na mestima gde ima smisla da se radi sa projekcijama a ne originalima.
 20. Da li smemo da koristimo Lombok?
