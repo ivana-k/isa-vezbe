@@ -2,6 +2,9 @@ package rs.ac.uns.ftn.informatika.rest.dto;
 
 public class GreetingTextDTO {
     private String text;
+    
+    public GreetingTextDTO() {
+    }
 
     public GreetingTextDTO(String text) {
         this.text = text;

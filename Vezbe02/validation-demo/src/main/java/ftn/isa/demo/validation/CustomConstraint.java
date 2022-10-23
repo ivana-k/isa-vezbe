@@ -14,7 +14,6 @@ public @interface CustomConstraint {
 
     String message() default "Field must contain exactly 13 digits";
 
-    // ovo je dodato jer ne radi bez toga
     Class<?>[] groups() default {};
 
     Class<? extends Payload>[] payload() default {};

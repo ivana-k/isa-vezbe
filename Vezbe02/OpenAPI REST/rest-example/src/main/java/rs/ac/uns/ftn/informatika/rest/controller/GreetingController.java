@@ -51,7 +51,8 @@ public class GreetingController {
 	@Operation(summary = "Get all greetings", description = "Get all greetings", method="GET")
 	@ApiResponses(value = {
 			@ApiResponse(responseCode = "200", description = "successful operation",
-					     content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = Greeting.class))))
+					     content = @Content(mediaType = "application/json", 
+					     array = @ArraySchema(schema = @Schema(implementation = Greeting.class))))
 	})
 	@GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
 	public ResponseEntity<Collection<Greeting>> getGreetings() {
@@ -83,7 +84,7 @@ public class GreetingController {
 
 	/*
 	 * Prilikom poziva metoda potrebno je navesti nekoliko parametara
-	 * unutar @PostMappimng anotacije: url kao vrednost 'value' atributa (ukoliko se
+	 * unutar @PostMapping anotacije: url kao vrednost 'value' atributa (ukoliko se
 	 * izostavi, ruta do metode je ruta do kontrolera), u slucaju POST zahteva
 	 * atribut 'produces' sa naznakom tipa odgovora (u nasem slucaju JSON) i atribut
 	 * consumes' sa naznakom oblika u kojem se salje podatak (u nasem slucaju JSON).
