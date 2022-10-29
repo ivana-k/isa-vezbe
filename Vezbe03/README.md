@@ -9,7 +9,7 @@ Podrška za aspekte je automatski uključena u Spring Boot aplikacije putem _@Sp
 ###### Materijali koje je neophodno proučiti da bi se primer mogao uspešno ispratiti:
 
 * [Aspect-oriented programming](https://www.youtube.com/watch?v=3KKUP7-o3ps)
-* [AOP.pdf](https://github.com/stojkovm/isara2021vezbe/blob/main/Vezbe05/AOP.pdf) iz foldera _Vezbe05_
+* [AOP.pdf](https://github.com/stojkovm/isara2021vezbe/blob/main/Vezbe05/AOP.pdf) iz foldera _Vezbe03_
 
 ###### Definisanje aspekta
 
