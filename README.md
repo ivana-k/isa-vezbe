@@ -67,3 +67,9 @@
     - Niste ograničeni da prikažete informacije na načina na koji to piše u specifikaciji projekta. Bitno je samo da sve informacije koje se traže negde prikažete, a sami osmislite gde ih ima smisla prikazati. Što se tiče koraka za rezervacije, gledajte da ispoštujete taj višekoračni tok, a kako će to izgledati u projektu sami osmislite.
 23. Da li da radimo logičko brisanje ili fizičko brisanje?
     - Možete raditi koje želite. Za potrebe generisanja izveštaja, logičnije je da radite logičko brisanje onih entiteta koji su deo izveštaja.
+24. Šta sve može biti oprema?
+    - Krv, špricevi, vata, igle,...
+25. Da li moramo imati potpuni upitnik za uzimanje anamneze?
+    - Ne morate. Dovoljno je ponuditi korisniku 10-15 pitanja (odgovore na sva pitanja čuvate u bazi).
+26. Da li polja iz upitnika mogu biti boolean?
+    - Da.
