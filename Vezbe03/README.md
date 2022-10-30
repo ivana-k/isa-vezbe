@@ -70,7 +70,7 @@ Metode koje predstavljaju taskove koji se izvršavaju potrebno je anotirati sa _
 
 * [__cron__](https://en.wikipedia.org/wiki/Cron): Logika se izvrsava u vremenskim trenucima opisanim cron sintaksom. Cron je izraz koji opisuje neki vremenski trenutak (npr. svaki dan 20:00:00, nedelja 23:59:59...). Ovaj atribut se koristi ukoliko je potrebno definisati task koji će se izvršavati u nekim vremenskim trenucima. Sintaksa cron izraza je prikazana na slici ispod.
 
-![spring cron expression](https://imgur.com/a/UK8zmA7)
+![spring cron expression](https://i.imgur.com/T0G0LJM.png)
 
 * __initialDelay__: Atribut čija vrednost označava koje vreme treba da prođe od trenutka kada se aplikacija startuje do trenutka kada se metoda prvi put može izvršiti. Vreme se navodi u milisekundama.
 * __fixedRate__: Atribut čija vrednost označava koliko vremena treba da prođe između izvrašavanja (gleda se trenutak kada je metoda _započela_ izvršavanje). Vreme se navodi u milisekundama. Npr. ako je vrednost atributa 5000 ms znači da će se metoda izvršavati na svakih 5 sekundi od trenutka poziva (npr. ako je metoda počela sa izvršavanjem u 20:00:00, završila u 20:03:00, sledeći poziv iste metode će biti u 20:05:00).
