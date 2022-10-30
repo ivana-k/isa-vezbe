@@ -43,7 +43,7 @@ Kada se metoda anotira `@Async` anotacijom, Spring će izdvojiti izvršavanje te
 
 U **async-example** primeru prikazano je jednostavan kod za slanje e-maila sinhrono i asinhrono. Dodat je `Thread.sleep()` kako bi se istakao efekat dugotrajne operacije koja ima smisla da se izvršava asinhrono i kakav efekat takvo izvršavanje ima za korisnika. Za potrebe slanja e-maila koristi se objekat klase `JavaMailSender`. Konekcioni parametri za programsko slanje e-maila zadati su kroz `application.properties`.
 
-Napomena: Za programsko slanje e-maila u primeru je korišćen Gmail nalog. Kako bi primer radio, potrebno je na nalogu koji ste postavili u `application.properties` dozvoliti rad sa "manje bezbednim aplikacijama". Na [linku](https://support.google.com/accounts/answer/6010255?hl=en) se nalazi uputstvo gde treba štiklirati __Off__ za "Less secure app access".
+Napomena: Za programsko slanje e-maila u primeru je korišćen Gmail nalog. Kako bi primer radio, potrebno je na nalogu koji ste postavili u `application.properties` omogućiti dvofaktorsku autentifikaciju. Pored toga, potrebno je izgenerisati lozinku za aplikaciju, koja će se postaviti kao vrednost `spring.mail.password` parametra. Na [linku](https://support.google.com/accounts/answer/185833?hl=en) se nalazi uputstvo.
 
 Dodatni materijali za razumevanje asinhronog izvršavanja metoda u Springu:
 
@@ -68,7 +68,9 @@ Da bi Spring mogao automatski da izvršava zakazane taskove, potrebno je konfigu
 
 Metode koje predstavljaju taskove koji se izvršavaju potrebno je anotirati sa ___@Scheduled___ i podesiti atribute na željene vrednosti. Atributi su sledeći:
 
-* [__cron__](https://en.wikipedia.org/wiki/Cron): Logika se izvrsava u vremenskim trenucima opisanim cron sintaksom. Cron je izraz koji opisuje neki vremenski trenutak (npr. svaki dan 20:00:00, nedelja 23:59:59...). Ovaj atribut se koristi ukoliko je potrebno definisati task koji će se izvršavati u nekim vremenskim trenucima.
+* [__cron__](https://en.wikipedia.org/wiki/Cron): Logika se izvrsava u vremenskim trenucima opisanim cron sintaksom. Cron je izraz koji opisuje neki vremenski trenutak (npr. svaki dan 20:00:00, nedelja 23:59:59...). Ovaj atribut se koristi ukoliko je potrebno definisati task koji će se izvršavati u nekim vremenskim trenucima. Sintaksa cron izraza je prikazana na slici ispod.
+
+![spring cron izraz](https://imgur.com/T0G0LJM)
 * __initialDelay__: Atribut čija vrednost označava koje vreme treba da prođe od trenutka kada se aplikacija startuje do trenutka kada se metoda prvi put može izvršiti. Vreme se navodi u milisekundama.
 * __fixedRate__: Atribut čija vrednost označava koliko vremena treba da prođe između izvrašavanja (gleda se trenutak kada je metoda _započela_ izvršavanje). Vreme se navodi u milisekundama. Npr. ako je vrednost atributa 5000 ms znači da će se metoda izvršavati na svakih 5 sekundi od trenutka poziva (npr. ako je metoda počela sa izvršavanjem u 20:00:00, završila u 20:03:00, sledeći poziv iste metode će biti u 20:05:00).
 * __fixedDelay__: Atribut čija vrednost označava koliko vremena treba da prođe između izvrašavanja (gleda se trenutak kada je metoda _završila_ izvršavanje). Vreme se navodi u milisekundama. Npr. ako je vrednost atributa 5000 ms znači da će se metoda izvršavati na svakih 5 sekundi od trenutka završetka (npr. ako je metoda počela sa izvršavanjem u 20:00:00, završila u 20:03:00, sledeći poziv iste metode će biti u 20:08:00).
