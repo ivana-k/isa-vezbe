@@ -1,0 +1,30 @@
+<div class="container div-align">
+    <div class="form-style-4 form-margin" id="formUserAsync" 
+        >
+    <p>Asinhrono izvrsavanje metode</p>
+
+            <label >Firstname </label>
+            <input type="text" name="firstName" [(ngModel)]="userAsync.firstName" />
+            <label>Lastname </label>
+            <input type="text" name="lastName" [(ngModel)]="userAsync.lastName" />
+            <label>Email address </label>
+            <input type="text" name="emailAddress" [(ngModel)]="userAsync.emailAddress" />
+        <label> <span> </span><button type="button" (click)="onSubmit($event, 'async')">Submit</button> 
+        </label>
+    </div>
+
+    
+    <div class="form-style-4 form-margin" id="formUserSync" 
+        >
+        <p>Sinhrono izvrsavanje metode</p>
+            <label >Firstname </label>
+            <input type="text" name="firstName" [(ngModel)]="userSync.firstName" />
+            <label>Lastname </label>
+            <input type="text" name="lastName" [(ngModel)]="userSync.lastName" />
+            <label>Email address </label>
+            <input type="text" name="emailAddress" [(ngModel)]="userSync.emailAddress" />
+        <label> <span> </span><button type="button" (click)="onSubmit($event, 'sync')">Submit</button> 
+        </label>
+    </div>
+    
+</div>
