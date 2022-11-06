@@ -12,9 +12,9 @@ insert into course (name) values ('Matematika');
 insert into course (name) values ('Osnove programiranja');
 insert into course (name) values ('Objektno programiranje');
 
-insert into teacher (first_name, last_name) values ('Strahinja', 'Simić');
-insert into teacher (first_name, last_name) values ('Marina', 'Antić');
-insert into teacher (first_name, last_name) values ('Siniša', 'Branković');
+insert into teacher (first_name, last_name, deleted) values ('Strahinja', 'Simić', false);
+insert into teacher (first_name, last_name, deleted) values ('Marina', 'Antić', false);
+insert into teacher (first_name, last_name, deleted) values ('Siniša', 'Branković', false);
 
 insert into teaching (course_id, teacher_id) values (1, 1);
 insert into teaching (course_id, teacher_id) values (1, 2);

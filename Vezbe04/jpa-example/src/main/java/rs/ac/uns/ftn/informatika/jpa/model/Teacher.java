@@ -3,13 +3,29 @@ package rs.ac.uns.ftn.informatika.jpa.model;
 import java.util.HashSet;
 import java.util.Set;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
+
+/* primer logickog brisanja
+ * 
+ * Prilikom poziva delete() metode repozitorijuma, okidace se ovaj upit koji radi soft delete
+ * tako sto menja status deleted polja sa false na true.
+ */
+@SQLDelete(sql
+	    = "UPDATE teacher "
+	    + "SET deleted = true "
+	    + "WHERE id = ?")
+@Where(clause = "deleted = false")
 @Entity
 public class Teacher {
 
@@ -22,8 +38,14 @@ public class Teacher {
 
 	@Column(name = "lastName", nullable = false)
 	private String lastName;
+	
+	//atribut potreban za logicko brisanje (soft delete)
+	//i koji se koristi u @Where klauzuli koju Hibernate dodaje pri svakom upitu koji treba da vrati sve neobrisane torke
+	@Column(name = "deleted")
+	private boolean deleted;
 
-	@ManyToMany(mappedBy = "teachers")
+	@ManyToMany(cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH})
+	@JoinTable(name = "teaching", joinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "teacher_id", referencedColumnName = "id"))
 	private Set<Course> courses = new HashSet<Course>();
 	
 	public Teacher() {
@@ -60,6 +82,14 @@ public class Teacher {
 
 	public void setCourses(Set<Course> courses) {
 		this.courses = courses;
+	}
+	
+	public boolean isDeleted() {
+		return deleted;
+	}
+
+	public void setDeleted(boolean deleted) {
+		this.deleted = deleted;
 	}
 
 	/*

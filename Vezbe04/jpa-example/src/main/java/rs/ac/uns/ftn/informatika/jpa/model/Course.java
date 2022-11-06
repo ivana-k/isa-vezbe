@@ -29,7 +29,7 @@ public class Course {
 	@OneToMany(mappedBy = "course", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private Set<Exam> exams = new HashSet<Exam>();
 
-	@ManyToMany
+	@ManyToMany( cascade = {CascadeType.PERSIST,CascadeType.MERGE,CascadeType.DETACH})
 	@JoinTable(name = "teaching", joinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "teacher_id", referencedColumnName = "id"))
 	private Set<Teacher> teachers = new HashSet<Teacher>();
 	

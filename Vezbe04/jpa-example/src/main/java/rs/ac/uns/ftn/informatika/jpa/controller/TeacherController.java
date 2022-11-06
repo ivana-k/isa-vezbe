@@ -3,6 +3,7 @@ package rs.ac.uns.ftn.informatika.jpa.controller;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -16,10 +17,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import rs.ac.uns.ftn.informatika.jpa.dto.CourseDTO;
 import rs.ac.uns.ftn.informatika.jpa.dto.TeacherDTO;
+import rs.ac.uns.ftn.informatika.jpa.mapper.TeacherDTOMapper;
 import rs.ac.uns.ftn.informatika.jpa.model.Course;
 import rs.ac.uns.ftn.informatika.jpa.model.Teacher;
 import rs.ac.uns.ftn.informatika.jpa.service.TeacherService;
@@ -51,10 +54,9 @@ public class TeacherController {
 		Page<Teacher> teachers = teacherService.findAll(page);
 
 		// convert teachers to DTOs
-		List<TeacherDTO> teachersDTO = new ArrayList<>();
-		for (Teacher s : teachers) {
-			teachersDTO.add(new TeacherDTO(s));
-		}
+		List<TeacherDTO> teachersDTO = teachers.stream()
+									.map(TeacherDTOMapper::fromTeachertoDTO)
+									.collect(Collectors.toList());
 
 		return new ResponseEntity<>(teachersDTO, HttpStatus.OK);
 	}
@@ -124,5 +126,22 @@ public class TeacherController {
 			coursesDTO.add(new CourseDTO(c));
 		}
 		return new ResponseEntity<>(coursesDTO, HttpStatus.OK);
+	}
+	
+	@GetMapping(value = "/checkDeleted")
+	public ResponseEntity<List<TeacherDTO>> getDeletedTeachers(@RequestParam boolean deleted) {
+		List<Teacher> teachers = new ArrayList<Teacher>();
+		
+		if (deleted) {
+			teachers = teacherService.findAllDeleted();
+		} else {
+			teachers = teacherService.findAll();
+		}
+
+		List<TeacherDTO> teachersDTO = teachers.stream()
+				.map(TeacherDTOMapper::fromTeachertoDTO)
+				.collect(Collectors.toList());
+		
+		return new ResponseEntity<>(teachersDTO, HttpStatus.OK);
 	}
 }

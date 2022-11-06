@@ -36,6 +36,14 @@ public class TeacherService {
 		teacherRepository.deleteById(id);
 	}
 	
+	public List<Teacher> findAllDeleted() {
+		return teacherRepository.findAllOnlyDeleted();
+	}
+	
+	public List<Teacher> findAllIncludingDeleted() {
+		return teacherRepository.findAllIncludingDeleted();
+	}
+	
 	public Teacher findOneWithCourses(Integer teacherId) {
 		return teacherRepository.findOneWithCourses(teacherId);
 	}
