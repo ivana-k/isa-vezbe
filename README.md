@@ -8,6 +8,45 @@
 
 ---
 
+**Obaveštenje 9.11.2022.**
+
+**RAČUNARSTVO I AUTOMATIKA**
+
+Obaveštavaju se studenti da će se prva kontrolna tačka održati u terminima vežbi od **14. do 18. novembra**.
+Timovi brane kontrolnu tačku u terminu u kom slušaju vežbe.
+U slučaju da članovi tima slušaju vežbe u različitim terminima, **neophodno je da jave mejlom** u kom terminu će braniti kontrolnu tačku.
+
+**Stari studenti** koji ne slušaju vežbe, a želeli bi da brane kontrolnu tačku, u **obavezi su da se jave mejlom** kako bi bili raspoređeni u neki od termina.
+
+Mejl adrese asistenata: trajkovic.andjela@uns.ac.rs , eva.jankovic@uns.ac.rs
+
+**INFORMACIONI INŽENJERING**
+
+**Stari studenti koji planiraju da izađu na kontrolnu tačku potrebno je da se jave mejlom na kovacevic.ivana@uns.ac.rs kako bi im termin bio dodeljen.**
+
+U nastavku se nalazi raspored dolazaka po timovima za kontrolnu tačku:
+
+Grupa 1, ponedeljak:
+
+12:15 tim 1
+
+12:30 tim 13
+
+12:45 tim 38
+
+13:00 tim 80
+
+Grupa 2, četvrtak:
+
+08:00 tim 25
+
+08:15 tim 56
+
+08:30 tim 65
+
+08:45 tim 70
+
+---
 
 # FAQ
 
