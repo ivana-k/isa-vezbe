@@ -112,3 +112,8 @@ Grupa 2, četvrtak:
     - Ne morate. Dovoljno je ponuditi korisniku 10-15 pitanja (odgovore na sva pitanja čuvate u bazi).
 26. Da li polja iz upitnika mogu biti boolean?
     - Da.
+27. Da li treba pored dodavanja admina centra (tacka 3.5) da implementiram i update i delete korisnika (admina centara) ili to nije neophodno?
+    - Nije neophodno.
+28. Takođe imam pretragu korisnika po imenu i prezimenu i prikaz njihovih detalja. Da li se to odnosi na pretragu svih korisnika sistema, ili na korisnike pojedinacnih centara s ozbirom da je to funkcionalnost za admina sistema?
+    - Admin sistema može da pretražuje sve postojeće korisnike kompletnog sistema. Administratori centra/medicinsko osoblje mogu da pretražuju samo korisnike koji su bar jednom posetili taj centar.
+    
