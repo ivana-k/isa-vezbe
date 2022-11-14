@@ -8,6 +8,91 @@
 
 ---
 
+**Obaveštenje 14.11.2022.**
+
+**RAČUNARSTVO I AUTOMATIKA**
+
+Obaštavaju se studenti da će se odbrana kontrolne tačke za stare studente organizovati u **četvrtak, 17.11. u učionici MI A2-4A** po dole navedenoj satnici.
+**Rok za poslednji commit je sreda, 16.11. u 23:59.**
+U slučaju da se ne nalazite na spisku, potrebno je da se najkasnije do **utorka, 15.11. u 12:00** javite na sledeću email adresu: eva.jankovic@uns.ac.rs
+**Potrebno je da pre termina pokrenete svoje aplikacije kako ne bi dolazilo do kašnjenja.**
+
+1)  13:00-13:20 Tim 44
+    
+    RA 57/2018, Bugarski Ivana
+    
+    RA 10/2018, Vasić Nataša
+    
+    RA 133/2018, Bursać Maša
+    
+    RA 11/2018, Dukovski Tatjana
+
+2)  13:00-13:20 Tim 68
+    
+    RA 206/2015, Spasić Aleksandar
+    
+    RA 232/2015, Petković Nikola
+
+3)  13:20-13:30 Tim 93
+   
+    RA 229/2018, Tanasic Goergije
+
+4)  13:20-13:30 Tim 69
+    
+    RA 108/2015, Teofilski Jovana
+
+5)  13:30-13:40 Tim 21
+    
+    RA 112/2015, Savčić Milorad
+
+6)  13:30-13:40 Tim 72
+    
+    RA 171/2016, Stanojevic Vanja
+
+7)  13:40-13:50 Tim 34
+    
+    RA 35/2017, Timarac Jovan
+
+8)  13:40-13:50 Tim 85
+    
+    RA 244/2020, Puškarov Tamara
+
+9)  13:50-14:00 Tim 58
+    
+    RA 42/2017, Marković Filip
+
+10) 13:50-14:00 Tim 67
+    
+    RA 40/2018, Cupać Tanja
+
+11) 14:00-14:10 Tim 12
+    
+    RA 198/2015, Vujasin Aleksandar
+
+12) 14:00-14:10 Tim 87
+    
+    RA 165/2018, Šišarica Dušan
+
+13) 14:10-14:20 Tim 6
+    
+    RA 182/2017, Savić Đorđe
+
+14) 14:10-14:20 Tim 52
+    
+    RA 197/2018, Ninković Nikola
+
+15) 14:20-14:40 Tim 9
+    
+    RA 135/2018, Uri Laslo
+    
+    RA 138/2018, Janković Marija
+    
+    RA 134/2018, Ostojić Mihajlo
+    
+    RA 172/2018, Marković Dušan
+
+---
+
 **Obaveštenje 9.11.2022.**
 
 **RAČUNARSTVO I AUTOMATIKA**
