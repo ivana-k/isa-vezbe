@@ -8,6 +8,130 @@
 
 ---
 
+**Obaveštenje 14.11.2022.**
+
+**RAČUNARSTVO I AUTOMATIKA**
+
+Obaštavaju se studenti da će se odbrana kontrolne tačke za stare studente organizovati u **četvrtak, 17.11. u učionici MI A2-4A** po dole navedenoj satnici.
+**Rok za poslednji commit je sreda, 16.11. u 23:59.**
+U slučaju da se ne nalazite na spisku, potrebno je da se najkasnije do **utorka, 15.11. u 12:00** javite na sledeću email adresu: eva.jankovic@uns.ac.rs
+**Potrebno je da pre termina pokrenete svoje aplikacije kako ne bi dolazilo do kašnjenja.**
+
+1)  13:00-13:20 Tim 44
+    
+    RA 57/2018, Bugarski Ivana
+    
+    RA 10/2018, Vasić Nataša
+    
+    RA 133/2018, Bursać Maša
+    
+    RA 11/2018, Dukovski Tatjana
+
+2)  13:00-13:20 Tim 68
+    
+    RA 206/2015, Spasić Aleksandar
+    
+    RA 232/2015, Petković Nikola
+
+3)  13:20-13:30 Tim 93
+   
+    RA 229/2018, Tanasic Goergije
+
+4)  13:20-13:30 Tim 69
+    
+    RA 108/2015, Teofilski Jovana
+
+5)  13:30-13:40 Tim 21
+    
+    RA 112/2015, Savčić Milorad
+
+6)  13:30-13:40 Tim 72
+    
+    RA 171/2016, Stanojevic Vanja
+
+7)  13:40-13:50 Tim 34
+    
+    RA 35/2017, Timarac Jovan
+
+8)  13:40-13:50 Tim 85
+    
+    RA 244/2020, Puškarov Tamara
+
+9)  13:50-14:00 Tim 58
+    
+    RA 42/2017, Marković Filip
+
+10) 13:50-14:00 Tim 67
+    
+    RA 40/2018, Cupać Tanja
+
+11) 14:00-14:10 Tim 12
+    
+    RA 198/2015, Vujasin Aleksandar
+
+12) 14:00-14:10 Tim 87
+    
+    RA 165/2018, Šišarica Dušan
+
+13) 14:10-14:20 Tim 6
+    
+    RA 182/2017, Savić Đorđe
+
+14) 14:10-14:20 Tim 52
+    
+    RA 197/2018, Ninković Nikola
+
+15) 14:20-14:40 Tim 9
+    
+    RA 135/2018, Uri Laslo
+    
+    RA 138/2018, Janković Marija
+    
+    RA 134/2018, Ostojić Mihajlo
+    
+    RA 172/2018, Marković Dušan
+
+---
+
+**Obaveštenje 9.11.2022.**
+
+**RAČUNARSTVO I AUTOMATIKA**
+
+Obaveštavaju se studenti da će se prva kontrolna tačka održati u terminima vežbi od **14. do 18. novembra**.
+Timovi brane kontrolnu tačku u terminu u kom slušaju vežbe.
+U slučaju da članovi tima slušaju vežbe u različitim terminima, **neophodno je da jave mejlom** u kom terminu će braniti kontrolnu tačku.
+
+**Stari studenti** koji ne slušaju vežbe, a želeli bi da brane kontrolnu tačku, u **obavezi su da se jave mejlom** kako bi bili raspoređeni u neki od termina.
+
+Mejl adrese asistenata: trajkovic.andjela@uns.ac.rs , eva.jankovic@uns.ac.rs
+
+**INFORMACIONI INŽENJERING**
+
+**Stari studenti koji planiraju da izađu na kontrolnu tačku potrebno je da se jave mejlom na kovacevic.ivana@uns.ac.rs kako bi im termin bio dodeljen.**
+
+U nastavku se nalazi raspored dolazaka po timovima za kontrolnu tačku:
+
+Grupa 1, ponedeljak:
+
+12:15 tim 1
+
+12:30 tim 13
+
+12:45 tim 38
+
+13:00 tim 80
+
+Grupa 2, četvrtak:
+
+08:00 tim 25
+
+08:15 tim 56
+
+08:30 tim 65
+
+08:45 tim 70
+
+---
 
 # FAQ
 
@@ -73,3 +197,8 @@
     - Ne morate. Dovoljno je ponuditi korisniku 10-15 pitanja (odgovore na sva pitanja čuvate u bazi).
 26. Da li polja iz upitnika mogu biti boolean?
     - Da.
+27. Da li treba pored dodavanja admina centra (tacka 3.5) da implementiram i update i delete korisnika (admina centara) ili to nije neophodno?
+    - Nije neophodno.
+28. Takođe imam pretragu korisnika po imenu i prezimenu i prikaz njihovih detalja. Da li se to odnosi na pretragu svih korisnika sistema, ili na korisnike pojedinacnih centara s ozbirom da je to funkcionalnost za admina sistema?
+    - Admin sistema može da pretražuje sve postojeće korisnike kompletnog sistema. Administratori centra/medicinsko osoblje mogu da pretražuju samo korisnike koji su bar jednom posetili taj centar.
+    
