@@ -43,23 +43,15 @@ public class WebSecurityConfig {
         return new BCryptPasswordEncoder();
     }
   	
-    // Definisemo nacin utvrdjivanja korisnika pri autentifikaciji
-// 	@Bean
-// 	public DaoAuthenticationProvider authenticationProvider() {
-// 	    DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
-// 	    // 1. koji servis da koristi da izvuce podatke o korisniku koji zeli da se autentifikuje
-// 	    // prilikom autentifikacije, AuthenticationManager ce sam pozivati loadUserByUsername() metodu ovog servisa
-// 	    authProvider.setUserDetailsService(userDetailsService());
-// 	    // 2. kroz koji enkoder da provuce lozinku koju je dobio od klijenta u zahtevu 
-//	    // da bi adekvatan hash koji dobije kao rezultat hash algoritma uporedio sa onim koji se nalazi u bazi (posto se u bazi ne cuva plain lozinka)
-// 	    authProvider.setPasswordEncoder(passwordEncoder());
-// 	 
-// 	    return authProvider;
-// 	}
+  
  	@Bean
  	public DaoAuthenticationProvider authenticationProvider() {
  	    DaoAuthenticationProvider authProvider = new DaoAuthenticationProvider();
+ 	   // 1. koji servis da koristi da izvuce podatke o korisniku koji zeli da se autentifikuje
+ 	    // prilikom autentifikacije, AuthenticationManager ce sam pozivati loadUserByUsername() metodu ovog servisa
  	    authProvider.setUserDetailsService(userDetailsService());
+ 	    // 2. kroz koji enkoder da provuce lozinku koju je dobio od klijenta u zahtevu 
+	    // da bi adekvatan hash koji dobije kao rezultat hash algoritma uporedio sa onim koji se nalazi u bazi (posto se u bazi ne cuva plain lozinka)
  	    authProvider.setPasswordEncoder(passwordEncoder());
  	 
  	    return authProvider;
