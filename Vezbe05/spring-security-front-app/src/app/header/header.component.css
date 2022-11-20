@@ -1,0 +1,36 @@
+:host {
+    position: relative;
+    z-index: 10;
+    color: rgb(93, 117, 196);
+  }
+  
+  .app-navbar {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .app-navbar span {
+    text-transform: uppercase !important;
+  }
+  
+  .right {
+    margin-left: auto;
+    float: right;
+  }
+  
+  .app-angular-logo {
+    margin: 0 4px 3px 0;
+    height: 26px;
+  }
+  
+  .greeting-hamburger {
+    display: none;
+  }
+mat-button{
+   margin-left: 30px; 
+  }
+
+  
+  
+  

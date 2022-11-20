@@ -1,0 +1,24 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title><b>{{title}}</b></mat-card-title>
+    <mat-card-subtitle>{{subTitle}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      {{content}}
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button (click)="onButtonClick()" color="primary" mat-raised-button>
+      {{apiText}}
+    </button>
+  </mat-card-actions>
+  <div [class]="responsePanelClass()" (click)="toggleExpand()">
+    <div class="center">
+      <pre>Path: {{responseObj.path}}</pre>
+      <pre>Method: {{responseObj.method}}</pre>
+      <pre>Status: {{responseObj.status}}</pre>
+      <pre>Message: {{responseObj.body || responseObj.message}} </pre>
+    </div>
+  </div>
+</mat-card>

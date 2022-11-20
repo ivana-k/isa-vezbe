@@ -1,0 +1,15 @@
+<div class="content" fxLayout="row" fxLayoutAlign="center none">
+  <app-card (apiClick)="makeRequest($event)" [responseObj]="fooResponse" apiText="/api/foo"
+    content='This is an demo public endpoint which requires no authentication.' fxFlex subTitle="Public" title='"Foo"'>
+  </app-card>
+
+  <app-card (apiClick)="makeRequest($event)" [responseObj]="whoamIResponse" apiText="/api/whoami"
+    content='The regular endpoint which returns the current user information. You have to sign in as either a User or an Admin to gain the access to this endpoint.'
+    fxFlex subTitle="Authorized role: USER" title='"Who am I"'>
+  </app-card>
+
+  <app-card (apiClick)="makeRequest($event)" [responseObj]="allUserResponse" apiText="/api/user/all" class="last"
+    content='This endpoint will give you a list of all the users. You have to sign in as an Admin to gain the access to this endpoint.'
+    fxFlex subTitle="Authorized role: ADMIN" title='"All users"'>
+  </app-card>
+</div>

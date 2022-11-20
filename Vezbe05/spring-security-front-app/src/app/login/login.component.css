@@ -1,0 +1,47 @@
+.content {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    width: 50%;
+    padding: 10px;
+  }
+  
+  mat-card {
+    max-width: 350px;
+    text-align: center;
+    animation: fadein 1s;
+    -o-animation: fadein 1s; /* Opera */
+    -moz-animation: fadein 1s; /* Firefox */
+    -webkit-animation: fadein 1s; /* Safari and Chrome */
+  
+  }
+  
+  mat-input-container {
+    display: block;
+  }
+  
+  mat-spinner {
+    width: 25px;
+    height: 25px;
+    margin: 20px auto 0 auto;
+  }
+  
+  button {
+    display: block;
+    width: 100%;
+  }
+  
+  .error {
+    color: #D50000;
+  }
+  
+  .success {
+    color: #8BC34A;
+  }
+  
+  a {
+    text-decoration: none;
+    cursor: auto;
+    color: #FFFFFF;
+  }
+  
