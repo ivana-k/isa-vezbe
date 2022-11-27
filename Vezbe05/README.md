@@ -2,7 +2,7 @@
 
 Dat je primer Spring aplikacije koja koristi _Spring Security_ radni okvir za autentifikaciju i autorizaciju. Klijentska aplikacija je Angular aplikacija.
 
-Za razumevanje primera, potrebno je pročitati ovaj dokument, kao i [Spring Security.pdf](https://github.com/stojkovm/isara2021vezbe/blob/main/Vezbe06/Spring%20Security.pdf) iz foldera _Vezbe 6_.
+Za razumevanje primera, potrebno je pročitati ovaj dokument, kao i [Spring Security.pdf](https://github.com/stojkovm/isara2021vezbe/blob/main/Vezbe06/Spring%20Security.pdf) iz foldera _Vezbe 5_.
 
 ## spring-security-example
 
