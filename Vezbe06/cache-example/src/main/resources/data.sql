@@ -1,0 +1,10 @@
+INSERT INTO product(id,name,origin,price) VALUES (1,'Mi Band 2','China', 400);
+INSERT INTO product(id,name,origin,price) VALUES (2,'Iphone 7','USA', 500);
+INSERT INTO product(id,name,origin,price) VALUES (3,'Some product','UK', 300);
+INSERT INTO product(id,name,origin,price) VALUES (4,'Iphone 3','USA', 100);
+INSERT INTO product(id,name,origin,price) VALUES (5,'Smart Pen','China', 200);
+INSERT INTO product(id,name,origin,price) VALUES (6,'PDA','China', 300);
+INSERT INTO product(id,name,origin,price) VALUES (7,'Some product 2','UK', 300);
+INSERT INTO product(id,name,origin,price) VALUES (8,'Iphone 4','USA', 400);
+INSERT INTO product(id,name,origin,price) VALUES (9,'Bicycle XYZ','China', 450);
+INSERT INTO product(id,name,origin,price) VALUES (10,'Tent','China', 450);

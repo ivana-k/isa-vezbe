@@ -1,0 +1,53 @@
+<config
+        xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xmlns='http://www.ehcache.org/v3'
+        xsi:schemaLocation="http://www.ehcache.org/v3
+            http://www.ehcache.org/schema/ehcache-core-3.7.xsd">
+
+    <!-- Persistent cache directory -->
+    <persistence directory="cache-example/cache" />
+
+    <!-- Default cache template -->
+    <cache-template name="default">
+    <!-- ttl - TIME TO LIVE - ukupno vreme koje će objekti provesti u kešu bez obzira da li im se pristupa ili ne
+    	tti - TIME TO IDLE - ukupno vreme koje će objekti provesti u kešu ako im se ne pristupa -->
+        <expiry>
+            <ttl unit="seconds">15</ttl>
+        </expiry>
+		<!-- Registruje se listener koji osluškuje svaku promenu u kešu:
+		- CREATED - dodavanje objekta u keš
+		- EXPIRED - detekcija da je objektu isteklo vreme u kešu (ttl, tti)
+		- EVICTED - izbacivanje objekta iz keša (dešava se ili eksplicitnim pozivanjem evicta ili po principu LRU (Least Recently Used) kada se dodaje novi objekt u popunjen keš izbacuje se iz keša onaj koji se najmanje koristio)
+		- REMOVED - uklanjanje objekta iz keša -->
+        <listeners>
+            <listener>
+                <class>rs.ac.uns.ftn.informatika.cache.logger.CacheLogger</class>
+                <event-firing-mode>ASYNCHRONOUS</event-firing-mode>
+                <event-ordering-mode>UNORDERED</event-ordering-mode>
+                <events-to-fire-on>CREATED</events-to-fire-on>
+                <events-to-fire-on>EXPIRED</events-to-fire-on>
+                <events-to-fire-on>EVICTED</events-to-fire-on>
+                <events-to-fire-on>REMOVED</events-to-fire-on>
+            </listener>
+        </listeners>
+
+        <resources>
+        <!-- 1000 objekata na Java heapu -->
+            <heap>1000</heap>
+            <!-- 10MB u RAMu se čuva -->
+            <offheap unit="MB">10</offheap>
+            <!-- 20MB na disku se čuva -->
+            <disk persistent="true" unit="MB">20</disk>
+        </resources>
+    </cache-template>
+
+    <!-- Cache configurations -->
+    <cache alias="product" uses-template="default">
+        <key-type>java.lang.Long</key-type>
+        <value-type>rs.ac.uns.ftn.informatika.cache.domain.Product</value-type>
+        <resources>
+            <heap>2</heap>
+        </resources>
+    </cache>
+
+</config>
