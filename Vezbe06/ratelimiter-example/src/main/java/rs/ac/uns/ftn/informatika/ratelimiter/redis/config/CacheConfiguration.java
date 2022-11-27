@@ -40,7 +40,7 @@ public class CacheConfiguration {
         return (builder) -> builder
                 .withCacheConfiguration("product", // defualtna vrednost prefiksa kljuceva u bazi je "ime_kesa::"
                         RedisCacheConfiguration.defaultCacheConfig() // konfiguacija koju menjamo
-                                .entryTtl(Duration.ofSeconds(60)) // TTL je moguce definisati u sekundama, minutima, satima,...
+                                .entryTtl(Duration.ofSeconds(15)) // TTL je moguce definisati u sekundama, minutima, satima,...
                                 .prefixCacheNameWith("isa-example:") // moze biti izmenjena statickom vrednoscu
                 );
     }

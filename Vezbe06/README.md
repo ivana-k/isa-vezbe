@@ -235,7 +235,7 @@ U isečku, definisane su dve instance, **standard** i **premium**. Za svaku defi
 - **timeoutDuration**: vreme čekanja na obradu zahteva - korisno u slučaju dugih _limitRefreshPeriod_ intervala, kao na primer:
   1.  aplikacija je konfigurisana tako da je **limitForPeriod 10 zahteva** i **limitRefreshPeriod 1h**, dok je **timeoutDuration 2 sekunde**
   2.  klijent je poslao maksimalan broj poziva za definisani interval; svaki sledeći neće biti obrađen dok vremenski interval ne istekne
-  3.  prošlo je **59 minuta i 59 sekundi** i klijent šalje zahtev; zahtev bi trebao da bude odbijen pošto ograničen interval nije prošao, ali pošto smo definisali da je vreme čekanja na obradu zahteva 5 sekundi, dok korisnik čeka proći će ograničeni vremenski interval i zahtev će biti obrađen; u ovakvoj situaciji smo uštedeli slanje još jednog zahteva od strane korisnika u slučaju da je vremenski interval blizu isteka
+  3.  prošlo je **59 minuta i 59 sekundi** i klijent šalje zahtev; zahtev bi trebao da bude odbijen pošto ograničen interval nije prošao, ali pošto smo definisali da je vreme čekanja na obradu zahteva 2 sekunde, dok korisnik čeka proći će ograničeni vremenski interval i zahtev će biti obrađen; u ovakvoj situaciji smo uštedeli slanje još jednog zahteva od strane korisnika u slučaju da je vremenski interval blizu isteka
 
 ```
 resilience4j.ratelimiter.instances.standard.limitForPeriod=1
@@ -246,6 +246,25 @@ resilience4j.ratelimiter.instances.premium.limitForPeriod=3
 resilience4j.ratelimiter.instances.premium.limitRefreshPeriod=1s
 resilience4j.ratelimiter.instances.premium.timeoutDuration=0
 ```
+
+Moguće je deklarativno navesti za koje metode će biti iskorišćen RateLimiting princip. U okviru ProductServiceImpl klase definisana je upotreba **standard** RateLimiter instance:
+
+```
+@RateLimiter(name = "standard", fallbackMethod = "standardFallback")
+public List<Product> findAll() {
+	return productRepository.findAll();
+}
+
+// Metoda koja ce se pozvati u slucaju RequestNotPermitted exception-a
+public List<Product> standardFallback(RequestNotPermitted rnp) {
+	LOG.warn("Prevazidjen broj poziva u ogranicenom vremenskom intervalu");
+	throw rnp;
+}
+```
+
+Upotrebom **@RateLimiter** anotacije navedeno je da prilikom poziva metode _findAll_ treba da se prvo proveri da li je prekoračen maksimalan broj zahteva u zadatom vremenskom intervalu.
+Broj zahteva i vremenski interval biblioteka zaključuje na osnovu navedenog parametra **name** (u ovom slučaju koristi se standard instanca definisana u okviru application.properties datoteke).
+U slučaju prekoračenja, biblioteka baca **RequestNotPermitted** izuzetak. Moguće je, kao parametar anotacije, navesti i ime metode koja će obraditi nastali izuzetak.
 
 Dokumentaciju prati i lista primera koji su javno dostupni na [GitHub repozitorijumu](https://github.com/resilience4j/resilience4j-spring-boot2-demo).
 

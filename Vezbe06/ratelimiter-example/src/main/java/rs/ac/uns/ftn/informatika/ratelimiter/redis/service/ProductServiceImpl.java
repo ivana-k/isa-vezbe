@@ -45,13 +45,13 @@ public class ProductServiceImpl implements ProductService {
 	 * - name - ime rateLimiter instance definisano u konfiguraciji
 	 * - fallbackMethod - ime metode koja se poziva u slucaju da dodje do izuzetka
 	 */
-	@RateLimiter(name = "basic", fallbackMethod = "basicFallback")
+	@RateLimiter(name = "standard", fallbackMethod = "standardFallback")
 	public List<Product> findAll() {
 		return productRepository.findAll();
 	}
 
 	// Metoda koja ce se pozvati u slucaju RequestNotPermitted exception-a
-	public List<Product> basicFallback(RequestNotPermitted rnp) {
+	public List<Product> standardFallback(RequestNotPermitted rnp) {
 		LOG.warn("Prevazidjen broj poziva u ogranicenom vremenskom intervalu");
 		// Samo prosledjujemo izuzetak -> global exception handler koji bi ga obradio :)
 		throw rnp;
