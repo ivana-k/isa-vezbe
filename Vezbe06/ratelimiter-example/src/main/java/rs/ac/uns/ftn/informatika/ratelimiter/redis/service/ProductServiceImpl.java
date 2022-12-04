@@ -20,7 +20,7 @@ public class ProductServiceImpl implements ProductService {
 	private ProductRepository productRepository;
 
 	public Product findOne(long id) {
-		LOG.info("Product with id: " + id + " successfully cached!");
+		LOG.info("Product with id: " + id + " fetched from DB and successfully cached!");
 		return productRepository.findById(id).get();
 	}
 
