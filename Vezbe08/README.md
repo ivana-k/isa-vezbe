@@ -2,9 +2,9 @@
 
 ## Message Queue
 
-Za potrebe razumevanja primera potrebno je prethodno pročitati [MessageQueue.pdf](https://github.com/stojkovm/isara2021vezbe/blob/main/Vezbe10/MessageQueue.pdf) iz foldera Vezbe08.
+Za potrebe razumevanja primera potrebno je prethodno pročitati [MessageQueue.pdf](https://github.com/ivana-k/isa-vezbe/blob/main/Vezbe08/MessageQueue.pdf) iz foldera Vezbe08.
 
-Poređenje MQ-ova se nalazi [MQs.pdf](https://github.com/stojkovm/isara2021vezbe/blob/main/Vezbe10/MessageQueue.pdf) iz foldera Vezbe08.
+Poređenje MQ-ova se nalazi [MQs.pdf](https://github.com/ivana-k/isa-vezbe/blob/main/Vezbe08/MQs.pdf) iz foldera Vezbe08.
 
 Kratak pregled prednosti korišćenja MQ nalazi se na [linku](https://blog.iron.io/top-10-uses-for-message-queue/).
 
