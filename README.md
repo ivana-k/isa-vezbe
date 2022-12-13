@@ -8,6 +8,21 @@
 
 ---
 
+**Obaveštenje 13.12.2022.**
+
+**SVI**
+
+Obaveštavaju se studenti da će se odbrana druge kontrolne tačke održati u terminima vežbi od 19. do 23. decembra.
+**Svi studenti (uključujući stare)** koji žele da brane KT2 neophodno je da se prijave putem sledeće forme: <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvuZ37Fd-bV2-pdjA7cIblHbD8BhpbWLInbZfgTucwP4RM9g/viewform">link</a>.
+
+**Rok za prijavu je 16.12. u 23:59.**
+
+**Stari studenti** brane kontrolnu tačku **22. 12. u terminu od 13h do 15h u učionici MI A2-4A**.
+
+Tačna satnica odbrane za sve studente biće objavljena naknadno.
+
+---
+
 **Obaveštenje 14.11.2022.**
 
 **RAČUNARSTVO I AUTOMATIKA**
