@@ -278,13 +278,15 @@ Primer komunikacije zasnovane na razmeni poruka između dve Spring aplikacije i 
 Za pokretanje primera potrebno je preuzeti Kafku - https://dlcdn.apache.org/kafka/3.3.1/kafka-3.3.1-src.tgz.
 
 Podrška za korišćenje Kafke u Spring aplikaciji se može uključiti dodavanjem odgovarajuće zavisnosti u pom.xml:
-
+	
+```
 <dependency>
 	<groupId>org.springframework.kafka</groupId>
 	<artifactId>spring-kafka</artifactId>
 </dependency>
 
-
+	
+```
 #### kafka-producer-example
 
 Potrebno je uspostaviti konekciju sa serverom. Kafkin server je zadužen za čuvanje pristiglih poruka. Da bi čuvali poruke neophodno je napraviti _TOPIC_. Primer kreiranja _TOPIC_-a se nalazi u klasi _KafkaTopic_. U primeru se nalazi jedan _TOPIC_, koga smo napravili od naziva _topic_-a, broja particija i broja replika. Svaka particija predstavlja jedan red kome šaljemo poruke. U primeru smo kreirali jednu particiju, što bi značilo da ćemo svaku poruku slati toj particiji. Takođe, omogućavamo jednu repliku topic-a. I imamo blokiranje slanje _topic_-u dok se ne završi kreiranje/pad tog _topic_-a.

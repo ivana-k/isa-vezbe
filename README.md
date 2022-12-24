@@ -8,6 +8,172 @@
 
 ---
 
+**Obaveštenje 17.12.2022.**
+
+**SVI**
+
+Obaveštavaju se studenti da će se odbrana druge kontrolne tačke održati po sledećoj satnici. **U slučaju odustajanja od odbrane kontrolne tačke, obavezno je javiti se mejlom predmetnom asistentu kako ne bi došlo do posledica.**
+
+**Računarstvo i automatika**
+
+**PETAK L4 (RC)**  
+
+  9:45   TIM 17
+
+  10:05 TIM 22
+  
+  10:30 TIM 24
+  
+  10:50 TIM 41
+  
+  11:10 TIM 48
+
+**PETAK NTP-309**
+  
+  12:30  TIM 7
+  
+  12:50  TIM 19
+  
+  13:10  TIM 11 
+  
+  13:20  TIM 5 
+  
+  13:40  TIM 2
+  
+  13:55  TIM 4
+
+**PETAK MI B5- 4A**
+  
+  14:20 TIM 14
+  
+  14:50 TIM 20
+	
+  15:10 TIM 33
+	
+  15:30 TIM 75
+  
+  15:50 TIM 55, TIM 55-1
+	
+  16:10 TIM 16
+ 	
+  16:30 TIM 47
+  
+  16:50 TIM 51
+  
+  17:00 TIM  62
+
+
+**ČETVRTAK MI A2-4A**
+
+**GRUPA 4**
+	
+  11:30 TIM 3
+	
+  11:50 TIM 27
+	
+  12:10 TIM 32
+	
+  12:30 TIM 37
+
+**PETAK NTP-311**
+
+**GRUPA 5**
+	
+  11:30 TIM 10
+	
+  11:50 TIM 39
+	
+  12:10 TIM 57
+	
+  12:30 TIM 73
+	
+  12:45 TIM 53 (Student 1)
+
+**GRUPA 6**
+	
+  12:50 TIM 23
+	
+  13:10 TIM 28
+	
+  13:30 TIM 29
+	
+  13:50 TIM 36
+
+**ČETVRTAK MI A2-4A**
+
+**STARI STUDENTI**
+	
+  13:00 TIM 6
+	
+  13:00 TIM 9 (Student 2)
+	
+  13:10 TIM 69
+	
+  13:10 TIM 67
+	
+  13:20 TIM 52
+	
+  13:20 TIM 85
+	
+  13:30 TIM 93
+	
+  13:30 TIM 72
+	
+  13:40 Violeta Kukić (TIM 106)
+	
+  13:40 TIM 98
+	
+  14:00 TIM 12
+	
+  14:00 TIM 68
+	
+  14:20 TIM 44
+	
+**Informacioni inženjering**
+
+**Grupa 1, ponedeljak:**
+  
+  12:00 tim 1
+  
+  12:20 tim 80
+  
+  12:40 tim 13
+  
+  13:00 tim 8
+  
+  13:20 tim 38
+  
+  13:40 tim 13
+
+**Grupa 2, četvrtak:**
+  
+  08:00 tim 82
+  
+  08:20 tim 56
+  
+  08:40 tim 65
+  
+  09:00 tim 70
+  
+  09:20 tim 25
+
+---
+
+**Obaveštenje 13.12.2022.**
+
+**SVI**
+
+Obaveštavaju se studenti da će se odbrana druge kontrolne tačke održati u terminima vežbi od 19. do 23. decembra.
+**Svi studenti (uključujući stare)** koji žele da brane KT2 neophodno je da se prijave putem sledeće forme: <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvuZ37Fd-bV2-pdjA7cIblHbD8BhpbWLInbZfgTucwP4RM9g/viewform">link</a>.
+
+**Rok za prijavu je 16.12. u 23:59.**
+
+**Stari studenti** brane kontrolnu tačku **22. 12. u terminu od 13h do 15h u učionici MI A2-4A**.
+
+Tačna satnica odbrane za sve studente biće objavljena naknadno.
+
+---
+
 **Obaveštenje 14.11.2022.**
 
 **RAČUNARSTVO I AUTOMATIKA**
