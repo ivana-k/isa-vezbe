@@ -7,6 +7,19 @@
 # OBAVEŠTENJA
 
 ---
+**Obaveštenje 04.01.2023.**
+
+**SVI**
+
+Obaveštavaju se studenti da će odbra projekata će biti 28. januara. Link za prijavu <a href="https://forms.gle/zYAQNSH3mBKhZw3L9">prijava</a>.
+
+**Rok za pijavu i poslednji komit: četvrtak 26.01.2023. u 23:59:59.**
+
+Tačan raspored i satnica odbrane po timovima bice objavljeni po završetku prijava.
+
+---
+
+
 
 **Obaveštenje 17.12.2022.**
 
