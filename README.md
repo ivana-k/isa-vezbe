@@ -7,6 +7,14 @@
 # OBAVEŠTENJA
 
 ---
+**Obaveštenje 27.01.2023.**
+
+**SVI**
+
+Obaveštavaju se studenti da se satnica odbrane projekata nalazi u folderu Specifikacija projekta.
+
+
+---
 **Obaveštenje 04.01.2023.**
 
 **SVI**
