@@ -7,6 +7,13 @@
 # OBAVEŠTENJA
 
 ---
+**Obaveštenje 27.01.2023.**
+
+**SVI**
+
+Okačena je satnica za odbranu projekata za 28. januar.
+
+---
 **Obaveštenje 04.01.2023.**
 
 **SVI**
