@@ -3,6 +3,7 @@
   <br>
   Primeri za laboratorijske vežbe iz predmeta Internet softverske arhitekture
 </h1>
+
 # OBAVEŠTENJA
 ---
 **Obaveštenje 19.06.2023.**
@@ -12,8 +13,6 @@
 Obaveštavaju se studenti da se **dopunjena satnica** odbrane projekata u **junskom** roku nalazi u folderu Specifikacija projekta.
 
 
----
-# OBAVEŠTENJA
 ---
 **Obaveštenje 17.06.2023.**
 
