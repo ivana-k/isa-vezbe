@@ -6,6 +6,17 @@
 
 # OBAVEŠTENJA
 ---
+**Obaveštenje 18.08.2023.**
+
+**SVI**
+
+Obaveštavaju se studenti da će odbrana projekata u septembarskom roku biti 30. avgusta. Link za prijavu <a href="https://forms.gle/TAnJ1V3qEnYWEyaL9">prijava</a>.
+
+**Rok za pijavu i poslednji komit: nedelja 27.08.2023. u 23:59:59.**
+
+Tačan raspored i satnica odbrane po timovima bice objavljeni po završetku prijava.
+
+---
 **Obaveštenje 19.06.2023.**
 
 **SVI**
