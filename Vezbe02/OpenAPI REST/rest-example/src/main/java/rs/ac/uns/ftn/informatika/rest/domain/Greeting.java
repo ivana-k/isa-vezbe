@@ -1,12 +1,21 @@
 package rs.ac.uns.ftn.informatika.rest.domain;
 
+import rs.ac.uns.ftn.informatika.rest.dto.GreetingDTO;
+
 public class Greeting {
 	
     private Long id;
     private String text;
+    private String author;
 
     public Greeting() {
 
+    }
+
+    public Greeting(GreetingDTO greeting) {
+        this.text = greeting.getText();
+        this.author = greeting.getAuthor();
+        this.id = greeting.getId();
     }
 
     public Long getId() {
@@ -17,6 +26,14 @@ public class Greeting {
         this.id = id;
     }
 
+    public String getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(String author) {
+        this.author = author;
+    }
+
     public String getText() {
         return text;
     }
@@ -25,8 +42,11 @@ public class Greeting {
         this.text = text;
     }
     
-    public void copyValues(Greeting greeting) {
+    public void copyValues(GreetingDTO greeting) {
     		this.text = greeting.getText();
+            this.author = greeting.getAuthor();
     }
+
+
 
 }

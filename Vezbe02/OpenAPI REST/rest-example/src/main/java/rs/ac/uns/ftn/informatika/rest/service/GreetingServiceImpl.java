@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import rs.ac.uns.ftn.informatika.rest.domain.Greeting;
+import rs.ac.uns.ftn.informatika.rest.dto.GreetingDTO;
 import rs.ac.uns.ftn.informatika.rest.dto.GreetingTextDTO;
 import rs.ac.uns.ftn.informatika.rest.repository.InMemoryGreetingRepository;
 
@@ -30,21 +31,22 @@ public class GreetingServiceImpl implements GreetingService {
 	}
 
 	@Override
-	public Greeting create(Greeting greeting) throws Exception {
+	public Greeting create(GreetingDTO greeting) throws Exception {
 		if (greeting.getId() != null) {
 			throw new Exception("Id mora biti null prilikom perzistencije novog entiteta.");
 		}
-		Greeting savedGreeting = greetingRepository.create(greeting);
+		Greeting savedGreeting = greetingRepository.create(new Greeting(greeting));
 		return savedGreeting;
 	}
 
 	@Override
-	public Greeting update(Greeting greeting) throws Exception {
+	public Greeting update(GreetingDTO greeting) throws Exception {
 		Greeting greetingToUpdate = findOne(greeting.getId());
 		if (greetingToUpdate == null) {
 			throw new Exception("Trazeni entitet nije pronadjen.");
 		}
 		greetingToUpdate.setText(greeting.getText());
+		greetingToUpdate.setAuthor(greeting.getAuthor());
 		Greeting updatedGreeting = greetingRepository.create(greetingToUpdate);
 		return updatedGreeting;
 	}
