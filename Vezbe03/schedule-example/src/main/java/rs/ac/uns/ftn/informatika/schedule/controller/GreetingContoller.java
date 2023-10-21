@@ -16,7 +16,7 @@ public class GreetingContoller {
 	 * 
 	 * ${greeting.cron} -> cita se vrednost koja je definisana u src/main/application.properties fajlu.
 	 */
-	//@Scheduled(cron = "${greeting.cron}")
+	@Scheduled(cron = "${greeting.cron}")
 	public void cronJob() {
 		logger.info("> cronJob");
 		
@@ -43,7 +43,7 @@ public class GreetingContoller {
 	 * ${greeting.initialdelay} -> cita se vrednost koja je definisana u src/main/application.properties fajlu.
 	 * ${greeting.fixedrate} -> cita se vrednost koja je definisana u src/main/application.properties fajlu.
 	 */
-	@Scheduled(initialDelayString = "${greeting.initialdelay}", fixedRateString = "${greeting.fixedrate}")
+	//@Scheduled(initialDelayString = "${greeting.initialdelay}", fixedRateString = "${greeting.fixedrate}")
 	public void fixedRateJobWithInitialDelay() {
 		logger.info("> fixedRateJobWithInitialDelay");
 		
@@ -70,7 +70,7 @@ public class GreetingContoller {
 	 * ${greeting.initialdelay} -> cita se vrednost koja je definisana u src/main/application.properties fajlu.
 	 * ${greeting.fixeddelay} -> cita se vrednost koja je definisana u src/main/application.properties fajlu.
 	 */
-	@Scheduled(initialDelayString = "${greeting.initialdelay}", fixedDelayString = "${greeting.fixeddelay}")
+	//@Scheduled(initialDelayString = "${greeting.initialdelay}", fixedDelayString = "${greeting.fixeddelay}")
 	public void fixedDelayJobWithInitialDelay() {
 		logger.info("> fixedDelayJobWithInitialDelay");
 		
