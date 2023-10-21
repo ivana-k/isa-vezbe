@@ -10,10 +10,11 @@ public class SampleService {
 	 */
 	public boolean someMethodReturning() {
 		System.out.println("Metoda someMethodReturning se izvrsava!");
-		return true;
+		return false;
 	}
 	
 	public void someMethodAround() {
+
 		System.out.println("Metoda someMethodAround se izvrsava!");
 	}	
 	
@@ -22,6 +23,7 @@ public class SampleService {
 	 * Primer metode koja ima neki parametar
 	 */
 	public void someMethodBefore(String test) {
+
 		System.out.println("Metoda someMethodBefore se izvrsava!");
 	}
 }

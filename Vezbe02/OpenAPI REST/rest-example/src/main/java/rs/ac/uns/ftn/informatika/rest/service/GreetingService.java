@@ -5,6 +5,7 @@ import java.util.Collection;
 import java.util.Optional;
 
 import rs.ac.uns.ftn.informatika.rest.domain.Greeting;
+import rs.ac.uns.ftn.informatika.rest.dto.GreetingDTO;
 import rs.ac.uns.ftn.informatika.rest.dto.GreetingTextDTO;
 
 public interface GreetingService {
@@ -13,9 +14,9 @@ public interface GreetingService {
 
 	Greeting findOne(Long id);
 
-	Greeting create(Greeting greeting) throws Exception;
+	Greeting create(GreetingDTO greeting) throws Exception;
 
-	Greeting update(Greeting greeting) throws Exception;
+	Greeting update(GreetingDTO greeting) throws Exception;
 
 	Greeting delete(Long id);
 

@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 import java.util.List;
 
 /*
-globalna komponenta za obradu gresaka
+    globalna komponenta za obradu gresaka
  */
 @RestControllerAdvice
 public class ValidationErrorsHandler {

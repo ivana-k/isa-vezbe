@@ -19,6 +19,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import rs.ac.uns.ftn.informatika.rest.domain.Greeting;
+import rs.ac.uns.ftn.informatika.rest.dto.GreetingDTO;
 import rs.ac.uns.ftn.informatika.rest.dto.GreetingTextDTO;
 import rs.ac.uns.ftn.informatika.rest.service.GreetingService;
 
@@ -27,6 +28,8 @@ import rs.ac.uns.ftn.informatika.rest.service.GreetingService;
  * 
  * @RequestMapping anotacija ukoliko se napise iznad kontrolera oznacava da sve rute ovog kontrolera imaju navedeni prefiks. 
  * U nasem primeru svaka rute kontrolera ima prefiks 'api/greetings'.
+ *
+ * OpenAPI dokumentacija se moze pogledati na:
  */
 @Tag(name = "Greeting controller", description = "The greeting API")
 @RestController
@@ -102,7 +105,7 @@ public class GreetingController {
 					content = @Content)
 	})
 	@PostMapping(consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Greeting> createGreeting(@RequestBody Greeting greeting)  {
+	public ResponseEntity<Greeting> createGreeting(@RequestBody GreetingDTO greeting)  {
 		Greeting savedGreeting = null;
 		try {
 			savedGreeting = greetingService.create(greeting);
@@ -122,26 +125,18 @@ public class GreetingController {
 					content =
 							{ @Content(mediaType = "application/json", schema = @Schema(implementation = Greeting.class)) }
 			),
-			@ApiResponse(responseCode = "404", description = "Greeting not found", content = @Content),
-			@ApiResponse(responseCode = "500", description = "Internal server error", content = @Content) })
+			@ApiResponse(responseCode = "404", description = "Greeting not found", content = @Content)
+			})
 	@PutMapping(value = "/{id}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-	public ResponseEntity<Greeting> updateGreeting(@RequestBody Greeting greeting) {
-		Greeting greetingForUpdate = greetingService.findOne(greeting.getId());
-		greetingForUpdate.copyValues(greeting);
-
-		Greeting updatedGreeting = null;
+	public ResponseEntity<Greeting> updateGreeting(@RequestBody GreetingDTO greeting) {
 		try {
-			updatedGreeting = greetingService.update(greetingForUpdate);
+			Greeting updatedGreeting = greetingService.update(greeting);
+			return new ResponseEntity<>(updatedGreeting, HttpStatus.OK);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return new ResponseEntity<Greeting>(HttpStatus.NOT_FOUND);
+			return new ResponseEntity<>(HttpStatus.NOT_FOUND);
 		}
 
-		if (updatedGreeting == null) {
-			return new ResponseEntity<Greeting>(HttpStatus.INTERNAL_SERVER_ERROR);
-		}
-		
-		return new ResponseEntity<Greeting>(updatedGreeting, HttpStatus.OK);
 	}
 
 	@Operation(summary = "Update fields of an existing greeting", description = "Update fields of an existing greeting")

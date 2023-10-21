@@ -25,9 +25,9 @@ public class AopExampleApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) {
-		this.sampleService.someMethodReturning();
+		//this.sampleService.someMethodReturning();
 		this.sampleService.someMethodAround();
-		this.sampleService.someMethodBefore("neki string");
+		//this.sampleService.someMethodBefore("neki string");
 	}
 
 	public static void main(String[] args) {
