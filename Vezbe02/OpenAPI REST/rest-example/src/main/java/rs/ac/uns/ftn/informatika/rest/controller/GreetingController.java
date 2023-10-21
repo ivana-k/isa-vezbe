@@ -29,7 +29,7 @@ import rs.ac.uns.ftn.informatika.rest.service.GreetingService;
  * @RequestMapping anotacija ukoliko se napise iznad kontrolera oznacava da sve rute ovog kontrolera imaju navedeni prefiks. 
  * U nasem primeru svaka rute kontrolera ima prefiks 'api/greetings'.
  *
- * OpenAPI dokumentacija se moze pogledati na:
+ * OpenAPI dokumentacija se moze pogledati na: http://localhost:8080/swagger-ui/index.html
  */
 @Tag(name = "Greeting controller", description = "The greeting API")
 @RestController
