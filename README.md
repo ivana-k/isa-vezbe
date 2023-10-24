@@ -7,6 +7,13 @@
 # OBAVEŠTENJA
 ---
 
+## Prijava timova - obeveštenje 24.10.2023.
+
+Predmetni projekat je predispitna obaveza koja se polaže u **četvoročlanim timovima**.  
+Potrebno je da se svi članovi tima upišu u okviru [narednog spiska](https://docs.google.com/spreadsheets/d/1o_RLoJgsfSfDYPJupvWmMK0uOf5vHODm4peWRT0oU3Q/edit?usp=sharing).  
+Rok za formiranje timova je **petak 3.11.2022. u 23:59:59**.  
+Svi studenti koji planiraju da rade projekat, a nisu formirali timove potrebno je da se upišu na spisak kako bi bili naknadno raspoređeni.
+
 ---
 
 # FAQ
