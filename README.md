@@ -7,6 +7,17 @@
 # OBAVEŠTENJA
 ---
 
+## Specifikacija projekta i Kontrolna Tačka 1
+
+Specifikaciju projekta dosutpna je u okviru repozitorijuma.
+
+**Prva kontrolna** tačka će biti organizovana u **nedelji 20.11-25.11 u terminu vežbi**.  
+Rok za izradu dela projekta propisanog prvom kontrolnom tačkom je **19.11.2023 u 23:59**.  
+Stari studenti koji žele da izađu na kontrolnu tačku u obavezi su da se jave na _eva.jankovic@uns.ac.rs_ kako bi im bio dodeljen termin u kom će braniti kontrolnu tačku.  
+Studenti koji ispune uslove navedene u kontrolnoj tački bivaju oslobođeni određenih funkcionalnosti iz specifikacije projekta.
+
+---
+
 ## Prijava timova - obeveštenje 24.10.2023.
 
 Predmetni projekat je predispitna obaveza koja se polaže u **četvoročlanim timovima**.  
