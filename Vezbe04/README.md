@@ -1,115 +1,102 @@
-# Vežbe 4 - Rad sa ORM i bazom podataka
+# Vežbe 3
 
-## jpa-example
+## aop-example
 
-Za potrebe razumevanja primera potrebno je prethodno odgledati predavanja:
+Primer Spring aplikacije u kojoj je definisan jedan aspekt (__TimeLoggingAspect__).
 
-* [JDBC uvod](https://www.youtube.com/watch?v=xH9d3ZYUn6c)
-* [ORM: Uvod](https://www.youtube.com/watch?v=D31s6wwtAjM)
-* [ORM: životni ciklus perzistentnih objekata](https://www.youtube.com/watch?v=0cgPpAfHTVg)
-* [ORM: asocijacije između perzistentnih klasa](https://www.youtube.com/watch?v=mlHJBgt5Os4)
-* [ORM: Mapiranje nasleđivanja](https://www.youtube.com/watch?v=KMKmYUnzPqM)
-* [ORM: izbor primarnih ključeva](https://www.youtube.com/watch?v=D7Ae7qENK98)
+Podrška za aspekte je automatski uključena u Spring Boot aplikacije putem _@SpringBootApplication_ anotacije.  U slučaju da se nije koristio Spring Boot, podrška za aspekte bi se mogla uključiti dodavanjem anotacije _@EnableAspectJAutoProxy_ na konfiguracionu klasu ili _<aop:aspectj-autoproxy/>_ u slučaju XML konfiguracije.
 
-i pročitati [OR-mapiranje.pdf](https://github.com/stojkovm/isara2021vezbe/blob/main/Vezbe04/OR-mapiranje.pdf) iz foldera _Vezbe04_.
+###### Materijali koje je neophodno proučiti da bi se primer mogao uspešno ispratiti:
 
-Takođe, u primeru se koristi [Postgres RDBMS](https://www.postgresql.org/) koji treba instalirati zajedno sa GUI okruženjem (pgAdmin Workbench) za lakši rad. Uputstva za instalaciju možete pronaći [ovde](https://www.youtube.com/watch?v=e1MwsT5FJRQ), [ovde](https://www.postgresql.org/docs/9.5/index.html) i [ovde](https://lmgtfy.com/?q=how+to+install+postgresql).
+* [Aspect-oriented programming](https://www.youtube.com/watch?v=3KKUP7-o3ps)
+* [AOP.pdf](https://github.com/stojkovm/isara2021vezbe/blob/main/Vezbe05/AOP.pdf) iz foldera _Vezbe03_
 
-#### Konfiguracija projekta
+###### Definisanje aspekta
 
-Spring Boot aplikacije kao podrazumevani ORM koriste ujedno i najpopularniji [Hibernate](https://hibernate.org/orm/)
-Podrška za korišćenje [Spring Data JPA](https://spring.io/projects/spring-data-jpa#overview) projekta se može uključiti dodavanjem odgovarajuće zavisnosti u `pom.xml` štikliranjem iste u [starter aplikaciji](https://start.spring.io/) ili ručno:
-```
-        <dependency>
-		<groupId>org.springframework.boot</groupId>
-		<artifactId>spring-boot-starter-data-jpa</artifactId>
-	</dependency>
-```
-Za komunikaciju sa bazom potrebno je uključiti zavisnost za drajver baze (u primeru se koristi Postgres):
-```
-	<dependency>
-        	<groupId>org.postgresql</groupId>
-        	<artifactId>postgresql</artifactId>
-        </dependency>
-```
-Sve dodatne zavisnosti koje zatrebaju za kasniji razvoj moguće je naći na [MVN repository](https://mvnrepository.com/)
+Da bi se definisao aspekt, potrebno je Java klasu anotirati ___@Aspect___ anotacijom. Zatim svaku metodu ove klase anotirati anotacijom koja će opisati u kom trenutku će se aspekt izvršiti, a kao atribut ove anotacije potrebno je navesti __pointcut__ izraz kojim se definiše konkretno mesto u aplikaciji na kojem će aspekt biti primenjen. Anotacije kojim se anotiraju metode su sledeće:
 
-Konfiguracija funkcionisanja ORM i baze može se odraditi u `application.properties` ili `application.yml` fajlu koji se nalazi u `src/main/resources`:
-```
-#Spring DataSource drajver koji će se koristiti za komunikaciju aplikacije sa bazom
-spring.datasource.driverClassName=org.postgresql.Driver
+* ___@Before___: pre poziva metode na koju se aspekt odnosi
+* ___@After___: nakon metode (bez obzira na ishod metode)
+* ___@AfterReturning___: nakon uspešnog završetka metode
+* ___@AfterThrowing___ : nakon što metoda izazove izuzetak
+* ___@Around___: omotač oko metode, tako što se deo koda izvršava pre, a deo posle metode.
 
-#Navodi se baza koja se koristi
-spring.datasource.platform=postgres
-
-#Navodi se URL do baze koja je pokrenuta u lokalu na podrazumevanom portu 5432 i na serveru je kreirana šema baze pod nazivom "jpa"
-#https://www.pgadmin.org/docs/pgadmin4/4.14/schema_dialog.html (ako koristimo Hibernate za kreiranje tabela, SQL deo sa linka nije potreban)
-spring.datasource.url=jdbc:postgresql://localhost:5432/jpa
-
-#Navode se kredencijali za konekciju na server baze
-spring.datasource.username=postgres
-spring.datasource.password=root
-
-#Umesto da sami pišemo SQL skriptu za kreiranje tabela u bazi, Hibernate kreira tabele na osnovu anotacija @Entity i kada aplikacija zavrsi sa radom dropuje ih (create-drop)
-#https://www.baeldung.com/spring-boot-data-sql-and-schema-sql
-#Ako želimo sami da kreiramo skriptu za kreiranje tabela potrebno je u src/main/resources folderu kreirati i popuniti fajl pod nazivom schema.sql koji će Spring Boot automatski pokrenuti pri pokretanju aplikacije
-spring.jpa.hibernate.ddl-auto = create-drop
-
-#Hibernate SQL upiti se ispisuju na IDE konzoli
-spring.jpa.show-sql = true
-
-#formatira ispis SQL upita koje Hibernate pravi ka bazi na IDE konzoli
-spring.jpa.properties.hibernate.format_sql=true
-
-#https://docs.spring.io/spring-boot/docs/2.1.0.M1/reference/html/howto-database-initialization.html#howto-initialize-a-database-using-spring-jdbc
-spring.datasource.initialization-mode=always
-
-#https://stackoverflow.com/questions/43905119/postgres-error-method-org-postgresql-jdbc-pgconnection-createclob-is-not-imple
-spring.jpa.properties.hibernate.jdbc.lob.non_contextual_creation=true
-
-#Hibernate optimizacija SQL upita za Postgres bazu
-spring.jpa.properties.hibernate.dialect = org.hibernate.dialect.PostgreSQL95Dialect
-```
-
-Ono što se očekuje od studenata je da za svoj projekat kreiraju i skriptu za popunu šeme baze podacima. Spring Boot može to da uradi automatski jer će pri skeniranju aplikacije tražiti u `src/main/resources` folderu `data.sql` i posle kreiranja šeme će skriptu pokrenuti (ili u slučaju da se koristi Postgres baza `data-postgres.sql`).
-
-#### Struktura projekta
-
-Model podataka koji se koriste u prilogu izgleda kao na slici: <br>
-![ISA model jpa-example](https://i.imgur.com/SUpm4Z1.jpg  "jpa-example db model")
-
-U primeru je prikazana tipična [višeslojna arhitektura](https://www.petrikainulainen.net/software-development/design/understanding-spring-web-application-architecture-the-classic-way/) serverske strane monolitne Spring Boot aplikacije koja ima sledeće komponente (objašnjene u primerima jsp-example i rest-example u folderu _Vezbe03_):
-
-* [POJO entiteti](https://www.baeldung.com/java-pojo-class), za koje je izabrana **IDENTITY** strategija generisanja ključeva, koji se mapiraju na tabele u bazi u paketu __model__
-* [Repozitorijumski interfejsi](https://thoughts-on-java.org/implementing-the-repository-pattern-with-jpa-and-hibernate/) koji predstavljaju ugovor koji Spring Data JPA zahteva da se napravi sa developerom da bi developer napisao uputstvo (upite) za komunikaciju sa bazom podataka u paketu __repository__
-* [Servisne metode](https://martinfowler.com/eaaCatalog/serviceLayer.html) koje predstavljaju poslovnu logiku aplikacije (funkcionalnosti koje želimo klijentima da omogućimo da koriste) u paketu __service__
-* [Kontrolere](https://www.baeldung.com/spring-controllers) koji prihvataju klijentske zahteve, prosleđuju ih servisima na obradu koji kontaktiraju repozitorijumske metode koje komuniciraju sa bazom, konvertuju torke u objekte, vraćaju rezultat servisnim metodama koje vraćaju odgovor kontrolerima koji konačno vraćaju odgovor klijentima u paketu __controller__
-* (**opcione komponente**) Objekti za transfer između različitih komponenti sistema - [DTO](https://martinfowler.com/eaaCatalog/dataTransferObject.html) - koji su u primeru uvedeni kao Proof of Concept način na koji se može optimalnije rukovati većom količinom informacija različitih entiteta u paketu __dto__
-
-Uprošćeni tok zahteva i odgovora dat je na slici:
-![ISA flow jpa-example](https://i.imgur.com/0uF8Mw3.png "jpa-example request-response flow")
+__Pointcut__ izrazom se definiše __šablon__, što znači da se aspekt primenjuje na __svaku__ metodu koja se uklapa u definisani šablon!
 
 ###### Dodatni materijali:
 
-* [Data Transfer Object - DTO](https://martinfowler.com/eaaCatalog/dataTransferObject.html)
-* [Local DTO](https://martinfowler.com/bliki/LocalDTO.html)
-* [Entity To DTO Conversion for a Spring REST API](https://www.baeldung.com/entity-to-and-from-dto-for-a-java-spring-application)
-* [@Controller vs @RestController](https://www.baeldung.com/spring-controller-vs-restcontroller)
-* [What is Spring Data JPA? And why should you use it?](https://thoughts-on-java.org/what-is-spring-data-jpa-and-why-should-you-use-it/)
-* [JPQL](https://thoughts-on-java.org/jpql/)
-* [Guide to Spring Data JPA](https://stackabuse.com/guide-to-spring-data-jpa/)
+* [Primer još jedne Spring aplikacije sa aspektima](https://www.journaldev.com/2583/spring-aop-example-tutorial-aspect-advice-pointcut-joinpoint-annotations)
+* [AOP i Spring Dokumentacija](https://docs.spring.io/spring/docs/2.0.x/reference/aop.html)
+* [Specifikacija AsspectJ jezika](https://www.eclipse.org/aspectj/doc/released/progguide/language.html)
 
-## inheritance-example
+###### Pokretanje primera (Eclipse)
 
-Primer Spring aplikacije u kojoj su prikazane strategije mapiranja nasleđivanja na relacionu bazu.
-Primer prati predavanja sa [linka](https://www.youtube.com/watch?v=KMKmYUnzPqM).
+* importovati projekat u workspace: Import -> Maven -> Existing Maven Project
+* instalirati sve dependency-je iz pom.xml
+* desni klik na projekat -> Run as -> Java Application / Spring Boot app (ako je instaliran STS plugin sa Eclipse marketplace)
+
+## async-example
+
+Asinhrono procesiranje je u Spring radnom okviru pojednostavljeno korišćenjem specijalnih anotacija.
+Potrebno je uključiti podršku za asinhrono izvršavanje metoda pomoću anotacije `@EnableAsync` i anotirati metodu koja treba asinhrono da se izvršava pomoću anotacije `@Async`.
+Kada se metoda anotira `@Async` anotacijom, Spring će izdvojiti izvršavanje te metode u odvojenu nit iz TaskExecutor thread pool-a, a pozivalac metode neće morati da čeka na njeno izvršavanje.
+
+U **async-example** primeru prikazano je jednostavan kod za slanje e-maila sinhrono i asinhrono. Dodat je `Thread.sleep()` kako bi se istakao efekat dugotrajne operacije koja ima smisla da se izvršava asinhrono i kakav efekat takvo izvršavanje ima za korisnika. Za potrebe slanja e-maila koristi se objekat klase `JavaMailSender`. Konekcioni parametri za programsko slanje e-maila zadati su kroz `application.properties`.
+
+Napomena: Za programsko slanje e-maila u primeru je korišćen Gmail nalog. Kako bi primer radio, potrebno je na nalogu koji ste postavili u `application.properties` omogućiti dvofaktorsku autentifikaciju. Pored toga, potrebno je izgenerisati lozinku za aplikaciju, koja će se postaviti kao vrednost `spring.mail.password` parametra. Na [linku](https://support.google.com/accounts/answer/185833?hl=en) se nalazi uputstvo.
+
+Dodatni materijali za razumevanje asinhronog izvršavanja metoda u Springu:
+
+1. [Task Execution and Scheduling](https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#scheduling)
+2. [Effective Advice on Spring Async: Part 1](https://dzone.com/articles/effective-advice-on-spring-async-part-1)
+3. [Effective Advice on Spring Async (ExceptionHandler): Part 2](https://dzone.com/articles/effective-advice-on-spring-async-exceptionhandler-1)
+4. [Effective Advice on Spring @Async: Final Part](https://dzone.com/articles/effective-advice-on-spring-async-final-part-1)
+5. [How To Do @Async in Spring](https://www.baeldung.com/spring-async)
+
+###### Pokretanje primera (Eclipse)
+
+* importovati projekat u workspace: Import -> Maven -> Existing Maven Project
+* instalirati sve dependency-je iz pom.xml
+* desni klik na projekat -> Run as -> Java Application / Spring Boot app (ako je instaliran STS plugin sa Eclipse marketplace)
+
+
+## schedule-example
+
+Primer Spring aplikacije sa zakazanim taskovima koji se izvršavaju u fiksnim vremenskim intervalima. Kada se primer pokrene, u konzoli analizirati vremenske trenutke kada su se metode izvršile.
+
+Da bi Spring mogao automatski da izvršava zakazane taskove, potrebno je konfiguracinu klasu anotirati anotacijom ___@EnableScheduling___ (u našem primeru, to je main klasa ScheduleExampleApplication.java).
+
+Metode koje predstavljaju taskove koji se izvršavaju potrebno je anotirati sa ___@Scheduled___ i podesiti atribute na željene vrednosti. Atributi su sledeći:
+
+* [__cron__](https://en.wikipedia.org/wiki/Cron): Logika se izvrsava u vremenskim trenucima opisanim cron sintaksom. Cron je izraz koji opisuje neki vremenski trenutak (npr. svaki dan 20:00:00, nedelja 23:59:59...). Ovaj atribut se koristi ukoliko je potrebno definisati task koji će se izvršavati u nekim vremenskim trenucima. Sintaksa cron izraza je prikazana na slici ispod.
+
+![spring cron expression](https://i.imgur.com/T0G0LJM.png)
+
+* __initialDelay__: Atribut čija vrednost označava koje vreme treba da prođe od trenutka kada se aplikacija startuje do trenutka kada se metoda prvi put može izvršiti. Vreme se navodi u milisekundama.
+* __fixedRate__: Atribut čija vrednost označava koliko vremena treba da prođe između izvrašavanja (gleda se trenutak kada je metoda _započela_ izvršavanje). Vreme se navodi u milisekundama. Npr. ako je vrednost atributa 5000 ms znači da će se metoda izvršavati na svakih 5 sekundi od trenutka poziva (npr. ako je metoda počela sa izvršavanjem u 20:00:00, završila u 20:03:00, sledeći poziv iste metode će biti u 20:05:00).
+* __fixedDelay__: Atribut čija vrednost označava koliko vremena treba da prođe između izvrašavanja (gleda se trenutak kada je metoda _završila_ izvršavanje). Vreme se navodi u milisekundama. Npr. ako je vrednost atributa 5000 ms znači da će se metoda izvršavati na svakih 5 sekundi od trenutka završetka (npr. ako je metoda počela sa izvršavanjem u 20:00:00, završila u 20:03:00, sledeći poziv iste metode će biti u 20:08:00).
+
+Sve taskove koji su zakazani Spring će izvršavati u posebnom thread-u. Koristi se samo jedan thread za sve zadatke, pa treba biti oprezan jer u jednom trenutku samo jedan zakazani task može da se izvršava. Ukoliko neki zakazani task treba da se izvrši, a Spring već izvrašava neki raniji zakazani, task će otići na čekanje i čim se thread oslobi, preuzima se na izvršavanje.
+
+Primer ispisa na konzoli:
+```
+2020-03-30 14:14:24.226  INFO 28365 --- [           main] r.a.u.f.i.s.ScheduleExampleApplication   : Started ScheduleExampleApplication in 2.171 seconds (JVM running for 2.561)
+2020-03-30 14:14:30.000  INFO 28365 --- [   scheduling-1] r.a.u.f.i.s.c.GreetingContoller          : > cronJob
+2020-03-30 14:14:35.002  INFO 28365 --- [   scheduling-1] r.a.u.f.i.s.c.GreetingContoller          : Procesiranje je trajalo 5 sekundi.
+2020-03-30 14:14:35.005  INFO 28365 --- [   scheduling-1] r.a.u.f.i.s.c.GreetingContoller          : < cronJob
+```
+
+U uglastim zagradama je oznaka thread-a koji izvršava metodu. Vidimo da postoje 2 thread-a:
+
+1. __main__: main thread koji startuje aplikaciju i
+2. __scheduling-1__: thread koji izvršava zakazane taskove.
 
 ###### Dodatni materijali:
 
-* [Hibernate Inheritance Mapping](https://www.baeldung.com/hibernate-inheritance)
-* [Inheritance Strategies with JPA and Hibernate – The Complete Guide](https://thoughts-on-java.org/complete-guide-inheritance-strategies-jpa-hibernate/)
-* [The best way to use entity inheritance with JPA and Hibernate](https://vladmihalcea.com/the-best-way-to-use-entity-inheritance-with-jpa-and-hibernate/)
-* [How to inherit properties from a base class entity using @MappedSuperclass with JPA and Hibernate](https://vladmihalcea.com/how-to-inherit-properties-from-a-base-class-entity-using-mappedsuperclass-with-jpa-and-hibernate/)
+* Više o cron sintaksi na [linku](http://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/scheduling/support/CronSequenceGenerator.html)
+* [The @Scheduled Annotation in Spring](https://www.baeldung.com/spring-scheduled-tasks)
+* [Spring Scheduling Tasks Guidelines](https://spring.io/guides/gs/scheduling-tasks/)
+* [Task Execution and Scheduling Spring documentation](https://docs.spring.io/spring/docs/current/spring-framework-reference/integration.html#scheduling)
 
 ###### Pokretanje primera (Eclipse)
 
