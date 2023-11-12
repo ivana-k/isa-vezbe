@@ -6,6 +6,14 @@
 
 # OBAVEŠTENJA
 ---
+## Prijava za prvu kontrolnu tačku
+
+Ukoliko planirate da izađete na prvu kontrolnu tačku, potrebno je da se na nivou tima prijavite na sledećoj [FORMI](https://forms.gle/sS8chKcser8fRAjL7), kako bismo sastavili raspored. 
+Rok za prijavu je **subota, 18.11. u ponoć**. Satnica dolazaka na odbranu po timovima će biti objavljena u nedelju, 19.11.
+
+__Prijava je **obavezna** i odnosi se na sve timove (i na stare studente).__
+
+---
 
 ## Specifikacija projekta i Kontrolna Tačka 1
 
